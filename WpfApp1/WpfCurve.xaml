@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp1.WpfCurve"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+        mc:Ignorable="d"
+        Title="WpfCurve" Height="500" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+            <Button Content="滚屏or不滚屏" Margin="10" Click="Button_Click"/>
+        </StackPanel>
+        <d3:ChartPlotter x:Name="plotter" Margin="10,10,20,10" Grid.Row="1" Grid.ColumnSpan="2" Background="Teal" Foreground="#FF00DBE7">
+            <d3:ChartPlotter.VerticalAxis >
+                <d3:VerticalAxis />
+            </d3:ChartPlotter.VerticalAxis>
+
+            <d3:ChartPlotter.HorizontalAxis>
+                <d3:HorizontalAxis />
+            </d3:ChartPlotter.HorizontalAxis>
+
+            <d3:Header Content="CPU 实时性能"/>
+            <d3:VerticalAxisTitle Content="百分比"/>
+            <d3:HorizontalAxisTitle Content="时间"/>
+        </d3:ChartPlotter>
+    </Grid>
+</Window>
